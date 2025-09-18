@@ -13,13 +13,12 @@ def verificar_idade():
 
     idade_int = int(idade)
 
-    is_adult = (idade_int >= IDADE_ADULTA)
+    is_adulto = (idade_int >= IDADE_ADULTA)
 
     return jsonify({
         "nome": str(nome).strip(),
         "idade": idade_int,
-        "is_adult": is_adult,
-        "mensagem": "Maior de idade" if is_adult else "Menor de idade"
+        "mensagem": "Maior de idade" if is_adulto else "Menor de idade"
     }), 200
 
 
