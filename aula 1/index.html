@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulário</title>
+    <style>        
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+
+    input{display:block;margin:6px 0 12px;padding:6px}
+
+    #msgErro {
+        color: red;            
+    }
+
+    #msgSucesso {
+        color: forestgreen;            
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+
+    <!-- Labels envolvem inputs para acessibilidade básica -->
+    <form id="form" method="get">
+        <label>Nome
+            <input id="nome" name="nome" type="text">
+        </label>
+
+        <label>Nascimento
+            <input id="nascimento" name="nascimento" type="date">
+        </label>
+
+        <label>Email
+            <input id="email" name="email" type="email">
+        </label>
+
+        <label>Salário
+            <input id="salario" name="salario" type="number">
+        </label>
+
+        <label>Senha
+            <input id="senha" name="senha" type="password">
+        </label>
+
+        <button type="button" onclick="validarFormulario()">Enviar</button>        
+    </form>
+
+    <div id="msgErro"></div>
+    <div id="msgSucesso"></div>
+
+    <script>
+        function validarFormulario(){
+
+            var nome = document.getElementById('nome').value;
+
+            if(nome === ''){
+
+                var mensagemErro = 'Nome não informado';
+
+                document.getElementById('msgErro').innerHTML = mensagemErro;
+                document.getElementById('msgSucesso').innerHTML = "";
+                alert(mensagemErro);
+                return;
+            }
+
+            document.getElementById('msgErro').innerHTML = "";
+            document.getElementById('msgSucesso').innerHTML = "Deu tudo certo!!!";
+
+            
+        }        
+    </script>
+</body>
+
+</html>
